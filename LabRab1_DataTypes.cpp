@@ -1,8 +1,6 @@
 ﻿#include <iostream>
 #include <bitset>
 #include <climits>
-#include <float.h>
-
 
 using std::cout;
 using std::endl;
