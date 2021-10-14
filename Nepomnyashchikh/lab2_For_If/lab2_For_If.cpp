@@ -3,9 +3,95 @@
 
 #include <iostream>
 
-int main()
+using std::cout;
+using std::cin;
+using std::endl;
+
+void task1() {
+	int e, a, b;
+	cout << "Введите положительное число n: "; cin >> e;
+	for (a = 0; a <= e; ++a) {
+		for (b = 0; b <= a; ++b) {
+			cout << b;
+		}
+		cout << endl;
+	}
+
+}
+
+void task2() {
+
+	int n, k, CNK;
+	cout << "Введите n (n < 100): "; cin >> n;
+	CNK = 1;
+	if (n < 100) {
+		for (k = 1; k <= n; ++k) {
+			cout << "C_n^" << k - 1 << " = " << CNK << endl;
+			CNK = CNK * (n - (k - 1)) / (k);
+		}
+		cout << "C_n^" << n << " = " << CNK << endl;
+	}
+	else {
+		cout << "Ошибка: n должно быть меньше 100." << endl;
+	}
+
+}
+
+void task3()
 {
-    std::cout << "Hello World!\n";
+	float sum = 0;
+	float i = 0;
+	int g;
+	int symbl;
+	cout << "Введите точку конца ввода: " << endl;
+	cin >> g;
+	cout << "Введите точки: " << endl;
+	cin >> symbl;
+	while (symbl != g) {
+		sum += symbl;
+		cin >> symbl;
+		i += 1;
+	}
+	sum /= i;
+	cout << "Среднее арифметическое введенных точек на прямой: " << sum << "\n" << endl;
+	return;
+}
+
+int main() {
+
+	setlocale(LC_ALL, "Russian");
+
+	int choice = 0;
+	while (true) {
+		cout << "Задания: \n"
+			<< "№_1 Числовой треугольник (n положительное) \n"
+			<< "№_2 Нахождение биномиальных коэффициентов: по целому положительному числу n (n<100) \n"
+			<< "№_3 Среднее арифметическое введенных точек на прямой \n"
+			<< "№_4 Выход \n" << endl;
+		cout << "Что Вы хотите выполнить?: "; cin >> choice;
+		switch (choice) {
+		case 1: {
+			task1();
+			cout << "\n";
+			break;
+		}
+		case 2: {
+			task2();
+			cout << "\n";
+			break;
+		}
+		case 3:
+		{
+			task3();
+			cout << "\n";
+			break;
+		}
+		default: {
+			return 0;
+		}
+		}
+
+	}
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
