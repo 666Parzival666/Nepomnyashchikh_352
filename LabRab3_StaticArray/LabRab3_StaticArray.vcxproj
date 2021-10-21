@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{aa615888-da17-46f0-a22e-74c886b12c7e}</ProjectGuid>
+    <ProjectGuid>{c8ce72b5-7579-479a-a677-02e83bdd3e74}</ProjectGuid>
     <RootNamespace>LabRab3StaticArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
