@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d05382c4-d73b-476d-81b7-43808a509352}</ProjectGuid>
-    <RootNamespace>lab2ForIf</RootNamespace>
+    <ProjectGuid>{b97928ab-64cd-413a-9a7b-e784da13b4a1}</ProjectGuid>
+    <RootNamespace>LabRab32StaticArray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lab2_For_If.cpp" />
+    <ClCompile Include="LabRab3.2_StaticArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
