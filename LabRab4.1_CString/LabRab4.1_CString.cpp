@@ -73,11 +73,11 @@ int main() {
 	setlocale(0, "");
 	int choice = 0;
 	while (true) {
-		cout << "1.Задание №1" << endl;
-		cout << "2.Задание №2" << endl;
-		cout << "3.Задание №3" << endl;
-		cout << "4.Задание №4" << endl;
-		cout << "5.Выход" << endl;
+		cout << "№1.Палиндром" << endl;
+		cout << "№2.Поиск подстроки" << endl;
+		cout << "№3.Шифр" << endl;
+		cout << "№4.Найти слова в кавычках" << endl;
+		cout << "№5.Выход" << endl;
 		cin >> choice;
 		switch (choice) {
 		case 1: {
