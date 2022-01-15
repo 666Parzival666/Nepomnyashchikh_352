@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab3.2_StaticArray", "La
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab4.1_CString", "LabRab4.1_CString\LabRab4.1_CString.vcxproj", "{8738939F-9E16-4003-9E7E-1891A19C75C8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab4.2_String_File", "LabRab4.2_String_File\LabRab4.2_String_File.vcxproj", "{A6528A35-5753-4FA3-A976-98CA26027A77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{8738939F-9E16-4003-9E7E-1891A19C75C8}.Release|x64.Build.0 = Release|x64
 		{8738939F-9E16-4003-9E7E-1891A19C75C8}.Release|x86.ActiveCfg = Release|Win32
 		{8738939F-9E16-4003-9E7E-1891A19C75C8}.Release|x86.Build.0 = Release|Win32
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Debug|x64.ActiveCfg = Debug|x64
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Debug|x64.Build.0 = Debug|x64
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Debug|x86.ActiveCfg = Debug|Win32
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Debug|x86.Build.0 = Debug|Win32
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Release|x64.ActiveCfg = Release|x64
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Release|x64.Build.0 = Release|x64
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Release|x86.ActiveCfg = Release|Win32
+		{A6528A35-5753-4FA3-A976-98CA26027A77}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
