@@ -28,20 +28,64 @@ void task1()
 		cout << "Строка не является полиндромом" << endl;
 	}
 }
-void task2() 
+int find_substring1(const char* str_for_search_in, const char* substring, int start_position)
 {
-	string s, ss;
-	int n = 0, p = 0;
-	cout << "Введите строку: ";
-	cin >> s;
-	cout << "Введите подстроку: ";
-	cin >> ss;
-	while ((p = s.find(ss,p)) != s.npos) 
-	{
-		++n;
-		++p;
+	int lenAllStr = 0;
+	while (str_for_search_in[lenAllStr] != '\0')
+		lenAllStr++;
+	int lenSub = 0;
+	while (substring[lenSub] != '\0')
+		lenSub++;
+
+	unsigned int i, j;
+	int number = 0;
+	for (i = start_position; i < lenAllStr - lenSub + 1; i++) {
+		j = 0;
+		while ((j < lenSub) && (substring[j] == str_for_search_in[i + j])) {
+			j = j + 1;
+		}
+
+		if (j == lenSub)
+		{
+			return i;
+		}
+
 	}
-	cout << "Подстрока '" << ss << "' встречается в строке '" << s << "' " << n << " раз" << endl;
+
+	return number;
+
+
+}
+int* find_substring2(const char* str_for_search_in, const char* substring)
+{
+	int* mas = new int;
+
+	int lenAllStr = 0;
+	while (str_for_search_in[lenAllStr] != '\0')
+		lenAllStr++;
+	int lenSub = 0;
+	while (substring[lenSub] != '\0')
+		lenSub++;
+
+	int i, j;
+	int number = 0;
+	for (i = 0; i < lenAllStr - lenSub + 1; i++) {
+		j = 0;
+		while ((j < lenSub) && (substring[j] == str_for_search_in[i + j])) {
+			j = j + 1;
+		}
+
+		if (j == lenSub)
+		{
+			mas[number] = i;
+			number++;
+			cout << i << " ";
+		}
+
+	}
+
+	return mas;
+
 }
 void encrypt(char* str_for_encrypt, int key)
 {
@@ -59,8 +103,8 @@ void encrypt(char* str_for_encrypt, int key)
 		else if (str_for_encrypt[i] == ' ');
 	}
 	return;
-}
-void task4() 
+} 
+void task4()
 {
 	char s[100];
 	char str = ' " ';
@@ -68,14 +112,13 @@ void task4()
 	cin.getline(s, 100);
 	cin.ignore();
 	int len = strlen(s);
-
-	for (int k = 0; k < len; k++) 
+	for (int k = 0; k < len; k++)
 	{
-		if (s[k] == str) 
+		if (s[k] == str)
 		{
-			for (int i = k + 1; i < len; i++) 
+			for (int i = k + 1; i < len; i++)
 			{
-				if (s[i] != str) 
+				if (s[i] != str)
 				{
 					cout << s[i] << endl;
 				}
@@ -83,7 +126,7 @@ void task4()
 		}
 	}
 }
-int main() 
+int main()
 {
 	setlocale(0, "");
 	int choice = 0;
@@ -104,7 +147,18 @@ int main()
 			}
 			case 2: 
 			{
-				task2();
+				char text3[255];
+				cout << "Введите текст\n";
+				std::cin.ignore();
+				cin.getline(text3, 255);
+				char t2[255];
+				cout << "Введите подстроку\n";
+				cin >> t2;
+
+				int* m;
+				m = find_substring2(text3, t2);
+				cout << endl;
+
 				break;
 			}
 			case 3: 

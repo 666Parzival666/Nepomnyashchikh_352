@@ -3,27 +3,14 @@
 #include <fstream>
 using namespace std;
 
-
-
-
-/*string file_format(const string file_path_full) по введенному полному расположению файла получить расширение,
-2. string file_name(const string file_path_full) по введенному полному расположению файла получить название
-3. string file_path (const string file_path_full) по введенному полному расположению файла получить расположение,
-4. char file_disk (const string file_path_full) по введенному полному расположению файла получить название диска,
-5. bool file_rename(string * file_path_full) по введенному полному расположению файла и новому имени переименовать файл,
-6. bool file_copy(const string file_path_full) по введенному полному расположению файла создать копию файла (имя копии получается приписыванием «_copy» к имени файла).*/
-
-
-
-string file_format(const string file_path_full)//по введенному полному расположению файла получить расширение
-{
+string file_format(const string file_path_full)
     int dot = file_path_full.find_last_of(".");
     if (dot != string::npos)
     {
         return file_path_full.substr(dot + 1, file_path_full.size() - dot);
     }
 }
-string file_name(const string file_path_full)// по введенному полному расположению файла получить название
+string file_name(const string file_path_full)
 {
     int slash = file_path_full.find_last_of("\\");
     int dot = file_path_full.find_last_of(".");
@@ -32,15 +19,14 @@ string file_name(const string file_path_full)// по введенному пол
         return file_path_full.substr(slash + 1, dot - slash - 1);
     }
 }
-string file_path(const string file_path_full)//по введенному полному расположению файла получить расположение
-{
+string file_path(const string file_path_full)
     int slash = file_path_full.find_last_of("\\");
     if (slash != string::npos)
     {
         return file_path_full.substr(0, slash);
     }
 }
-char file_disk(const string file_path_full)//по введенному полному расположению файла получить название диска
+char file_disk(const string file_path_full)
 {
     int dot2 = file_path_full.find_last_of(":");
     if (dot2 != string::npos)
@@ -48,8 +34,7 @@ char file_disk(const string file_path_full)//по введенному полн�
         return file_path_full.substr(0, file_path_full.size() - dot2)[0];
     }
 }
-bool file_rename(string* file_path_full) //по введенному полному расположению файла и новому имени переименовать файл
-{
+bool file_rename(string* file_path_full)
     string name;
     cout << "Новое имя:  ";
     cin >> name;
@@ -64,11 +49,11 @@ bool file_rename(string* file_path_full) //по введенному полно�
 
 }
 
-bool file_copy(const string file_path_full)// по введенному полному расположению файла создать копию файла
+bool file_copy(const string file_path_full)
 {
     const static int BUF_SIZE = 4096;
 
-    std::ifstream in(file_path_full, ios_base::in | ios_base::binary); // Задается двоичный режим, чтобы
+    std::ifstream in(file_path_full, ios_base::in | ios_base::binary);
 
     int slash = file_path_full.find_last_of("\\");
     int dot = file_path_full.find_last_of(".");
@@ -86,9 +71,9 @@ bool file_copy(const string file_path_full)// по введенному полн
 
         in.read(&buf[0], BUF_SIZE);      // Считать максимум n байт в буфер,
 
-        out.write(&buf[0], in.gcount()); // затем записать содержимое буфера
+        out.write(&buf[0], in.gcount());
 
-    } while (in.gcount() > 0);        // в поток вывода.
+    } while (in.gcount() > 0); 
 
     in.close();
 
