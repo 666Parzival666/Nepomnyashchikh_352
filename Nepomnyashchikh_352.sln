@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab6.3", "LabRab6.3\LabR
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab6.4", "LabRab6.4\LabRab6.4.vcxproj", "{0344FC51-EC77-4D6E-BCEC-2955033B691F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LabRab6.5", "LabRab6.5\LabRab6.5.vcxproj", "{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{0344FC51-EC77-4D6E-BCEC-2955033B691F}.Release|x64.Build.0 = Release|x64
 		{0344FC51-EC77-4D6E-BCEC-2955033B691F}.Release|x86.ActiveCfg = Release|Win32
 		{0344FC51-EC77-4D6E-BCEC-2955033B691F}.Release|x86.Build.0 = Release|Win32
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Debug|x64.ActiveCfg = Debug|x64
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Debug|x64.Build.0 = Debug|x64
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Debug|x86.Build.0 = Debug|Win32
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Release|x64.ActiveCfg = Release|x64
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Release|x64.Build.0 = Release|x64
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Release|x86.ActiveCfg = Release|Win32
+		{ACFB0614-4622-4E13-BEF9-FC02E93A1D4E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
