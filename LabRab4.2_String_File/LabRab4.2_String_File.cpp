@@ -23,7 +23,7 @@ void task1() {
 	cout << "Введите полное расположение файла: " << endl;
 	cin >> file_path_full;
 
-	cout << file_format(file_path_full) << endl; // Вывод расширения из полного расположения файла
+	cout << file_format(file_path_full) << endl;
 }
 
 
@@ -41,10 +41,10 @@ string file_name(const string file_path_full) {
 
 
 void task2() {
-	string file_path_full; // Полное расположение файла
+	string file_path_full;
 
 	cout << "Введите полное расположение файла: " << endl;
-	cin >> file_path_full; // Ввод полного расположения файла
+	cin >> file_path_full;
 
 	cout << file_name(file_path_full) << endl; // Вывод названия из полного расположения файла
 }
