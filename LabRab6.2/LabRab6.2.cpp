@@ -2,49 +2,76 @@
 #include <deque>
 
 using namespace std;
-setlocale(LC_ALL, "Russian");
 
 bool palindrom() {
-    string S;
-    deque <char> check;
-    cout << "Введите строчку ";
-    cin >> S;
-    for (int i = 0; i < S.size(); i++) {
-        check.push_back(S[i]);
-    }
-    while (!check.empty()) {
-        if (check.size() == 1) break;
-        if (check.front() == check.back()) {
-            check.pop_back();
-            check.pop_front();
-        }
-        else {
-            cout << "Не является полиндромом" << endl;
-            return false;
-        }
-    }
-    cout << "Является полиндромом" << endl;
-    return true;
+	string D;
+	deque <char> geek;
+	cout << "string- ";
+	cin >> D;
+	for (int a = 0; a < D.size(); a++) {
+		geek.push_back(D[a]);
+	}
+	while (!geek.empty()) {
+		if (geek.size() == 1) break;
+		if (geek.front() == geek.back()) {
+			geek.pop_back();
+			geek.pop_front();
+		}
+		else {
+			cout << "ne palindrom" << endl;
+			return false;
+		}
+	}
+	cout << "palindrom" << endl;
+	return true;
+}
+int rotate(int* A, int* B, int* C) {
+	return (B[0] - A[0]) * (C[1] - B[1]) - (B[1] - A[1]) * (C[0] - B[0]);
+}
+
+deque<int> grahamscan(int(*A)[2], int n) {
+	deque<int> P;
+	for (int i = 0; i < n; i++) {
+		P.push_back(i);
+	}
+	for (int i = 1; i < n; i++) {
+		if (A[P.at(i)][0] < A[P.at(0)][0]) {
+			int t = P[i];
+			P[i] = P[0];
+			P[0] = t;
+		}
+	}
+
+	for (int i = 2; i < n; i++) {
+		int j = i;
+		while (j > 1 && (rotate(A[P[0]], A[P[j - 1]], A[P[j]]) < 0)) {
+			int t = P[j];
+			P[j] = P[j - 1];
+			P[j - 1] = t;
+			j -= 1;
+		}
+	}
+
+
+	deque<int> S = { P[0], P[1] };
+	int sizeS = 2;
+	for (int i = 2; i < n; i++) {
+		while (rotate(A[S[sizeS - 2]], A[S[sizeS - 1]], A[P[i]]) < 0) {
+			S.pop_back();
+			sizeS--;
+		}
+		S.push_back(P[i]);
+		sizeS++;
+	}
+	return S;
 }
 
 int main() {
-    int N;
-    while (true) {
-        cout << "Выберите номер задания ";
-        cin >> N;
-        switch (N) {
-        case 1:
-            palindrom();
-            break;
-        case 2:
-            break;
-        case 3:
-            cout << "Всего доброго" << endl;
-            return 0;
-        default:
-            cout << "Ошибка" << endl;
-            break;
-        }
-    }
-    return 0;
-}
+	cout << "1" << endl;
+	palindrom();
+	cout << "2" << endl;
+	int A[12][2] = { {3, 3}, {2, 1}, {6, 2}, {5, 4}, {7, 5},
+		{4, 9}, {1, 6}, {10, 7}, {8, 8}, {9, 10}, {-1, -3}, {-5, -10} };
+	for (int i : grahamscan(A, 12)) {
+		cout << (i + 1) << " ";
+	}
